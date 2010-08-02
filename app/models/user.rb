@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   end
   
   
+  
   has_attached_file :photo, 
       :styles =>  { 
         :profile => "200x200>",
@@ -32,6 +33,8 @@ class User < ActiveRecord::Base
   # validates_attachment_presence :photo
   validates_attachment_size :photo, :less_than => 10.megabytes
   validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
+  
+  has_many :posts
   
   def send_mail
     UserMailer.deliver_welcome_email
