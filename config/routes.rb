@@ -17,7 +17,7 @@ ActionController::Routing::Routes.draw do |map|
   map.show_random "/cutie" , :controller => "items", :action => "show_random"
   map.second_step "/uploaded_item/second_step/:id", :controller => "uploaded_items", :action => "second_step"
   map.resource :user_session
-  
+  map.resources :steps
   
   map.resource :account, :controller => "users"
   map.resources :users
