@@ -1,0 +1,22 @@
+
+<div id='center'>
+	<%= link_to "Back to Overview", steps_url , :class => "new-step"%>
+
+	<% form_for @step do |f| %>
+	<ul>
+		<div>
+			<%= f.label :title %>
+			<%= f.text_field :title , :class =>"field-input"%>
+		</div>
+		
+		<%= submit_tag "Done" , :class => "step_button" %>
+		<%= submit_tag "Save As Draft" , :class => "step_button" %>
+		<%= submit_tag "+ Add More Step",  :class => "step_button", :id => "add-more-step" %>
+	<% end %>
+
+</div> <!-- EO #center -->
+<div id='right'>
+	<ul class="clearfix">
+		This is the left of StepsController
+	</ul>
+</div>
