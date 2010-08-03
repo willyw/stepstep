@@ -1,4 +1,4 @@
 class Step < ActiveRecord::Base
   belongs_to :post
-  has_many :attachments
+  has_many :details
 end

@@ -12,7 +12,7 @@
 			<% else %>
 				<div>
 			<% end %>
-					<%=  link_to "qTies", show_random_url %>
+					<%#=  link_to "qTies", show_random_url %>
 				</div>
 			
 			<% if current_user %>
@@ -22,7 +22,7 @@
 				<% else %>
 					<div>
 				<% end %>
-						<%= link_to "myCute", new_uploaded_item_url %>
+						<%#= link_to "myCute", new_uploaded_item_url %>
 					</div>
 					
 				<% if show_cuteProfile?( params ) %>
@@ -30,7 +30,7 @@
 				<% else %>
 					<div>
 				<% end %>
-						<%= link_to "Profile", account_url %>
+						<%#= link_to "Profile", account_url %>
 					</div>	
 			<% end %>
 		</ul>

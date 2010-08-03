@@ -1,0 +1,30 @@
+
+<div id='center'>
+	<%= link_to "Back to Overview", posts_url , :class => "new-step"%>
+
+	<h2>
+		<span><%= '#' + @step.order.to_s + "/#{@post.steps.count}" %></span>
+		<%= @step.title %>
+	</h2>
+	
+	<a href="#">Add Description</a>
+	
+	<% form_for @step, :url => {:controller => "steps", :action => "update"} do |f| %>
+		<%= f.text_area :description, :size => "50x5" %>
+	<% end %>
+	
+	<br />
+	
+	
+		<input  name="detail[photo]"  destination="<%= step_details_url(@step.id) %>"  id="uploadify" type="file" />
+	
+	
+	<br />
+	
+	<%= render_next_step(@step) %>
+</div> <!-- EO #center -->
+<div id='right'>
+	<ul class="clearfix">
+		This is the left of StepsController
+	</ul>
+</div>

@@ -1,15 +1,17 @@
 $(document).ready(function(){
 	// find the destination
-	var destination = "http://www.google.com"; 
+	
 	
 	$("#uploadify").uploadify({
 		'uploader'       : '/javascripts/uploadify.swf',
-		'script'         : destination,
+		'script'         : $("#uploadify").attr('destination'),
 		'cancelImg'      : '/images/cancel.png',
 		'queueID'        : 'fileQueue',
 		'folder'         : 'uploads',
 		'auto'           : true,
-		'multi'          : true
+		'multi'          : true,
+		'buttonText'	: "Upload Pictures"
+	
 	});
 	
 	
@@ -25,17 +27,12 @@ $(document).ready(function(){
 			$('#step-template').clone().processStepTemplate().insertAfter("#step-" + currentStep );
 		}
 		
-
-		
-		// 	#(".steps").arrange();
-		// clone #step-template
-		// remove id #step-template
-		// update the steps counter
-		// no ajax yet
 		return false;
-		
 	});
 	
+	// new nicEditor({
+	// 	iconsPath : '/javascripts/nicEditorIcons.gif'
+	// }).panelInstance('step_description');
 });
 
 

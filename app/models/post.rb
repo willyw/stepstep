@@ -26,4 +26,13 @@ The content of params
       return nil
     end
   end
+  
+  def get_step( step_order )
+    return Step.find(:first, :conditions => {
+      :order => step_order.to_i,
+      :post_id => self.id
+    })
+  end
+  
+  
 end

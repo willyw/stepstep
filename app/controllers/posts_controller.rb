@@ -18,7 +18,7 @@ class PostsController < ApplicationController
  
     respond_to do |format|
       format.html {
-        redirect_to posts_url
+        redirect_to add_details_url(@post.id, 1)
         return 
       }
     
@@ -27,4 +27,8 @@ class PostsController < ApplicationController
       }
     end
   end
+  
+  def review
+  end
+  
 end

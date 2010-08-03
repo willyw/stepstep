@@ -29,8 +29,24 @@ class ApplicationController < ActionController::Base
   def user_layout( layout_name )
     layout_name || "application"
   end
-
-
+# see this
+# http://www.sitepoint.com/blogs/2006/10/05/json-p-output-with-rails/
+# http://drnicwilliams.com/2006/11/23/supporting-json-in-rails-or-anywhere/
+  def render_json(json, options={})  
+    callback, variable = params[:callback], params[:variable]  
+    response = begin  
+      if callback && variable  
+        "var #{variable} = #{json};\n#{callback}(#{variable});"  
+      elsif variable  
+        "var #{variable} = #{json};"  
+      elsif callback  
+        "#{callback}(#{json});"  
+      else  
+        json  
+      end  
+    end  
+    render({:content_type => :js, :text => response}.merge(options))  
+  end
 
 
   def local_request?
