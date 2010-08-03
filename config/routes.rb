@@ -18,6 +18,7 @@ ActionController::Routing::Routes.draw do |map|
   map.second_step "/uploaded_item/second_step/:id", :controller => "uploaded_items", :action => "second_step"
   map.resource :user_session
   map.resources :steps
+  map.resources :posts
   
   map.resource :account, :controller => "users"
   map.resources :users

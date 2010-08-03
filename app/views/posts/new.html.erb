@@ -2,12 +2,22 @@
 <div id='center'>
 	<%= link_to "Back to Overview", steps_url , :class => "new-step"%>
 
-	<% form_for @step do |f| %>
+	<% form_for @post do |f| %>
 	<ul>
-		<div>
+		<div class='clearfix' id="post-header">
 			<%= f.label :title %>
-			<%= f.text_field :title , :class =>"field-input"%>
+			<%= f.text_field :title , :class =>"field-input", :id => "post_title"%>
 		</div>
+		
+
+		<div class="clearfix" id="step-template">
+			<label for="step_title"></label>
+			<input type="text" size="30" name="step[title]" id="step_title" class="field-input">
+		</div>
+		
+		
+		
+
 		
 		<%= submit_tag "Done" , :class => "step_button" %>
 		<%= submit_tag "Save As Draft" , :class => "step_button" %>

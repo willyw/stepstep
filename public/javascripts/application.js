@@ -1,60 +1,78 @@
 $(document).ready(function(){
+	// find the destination
+	var destination = "http://www.google.com"; 
 	
-	// $("#star-image").onLoad( function(){
-		// alert("boom boom boom");
-		$("form#new_rating input").each(function(){
-		    $(this).attr('checked', 0 );
-		});
-		$("#question-wrapper").show();
-	// });
-	
-	
-	
-	$("div#question").bind('click', function(e){
-		var $target = $(e.target); 
-		if( $target.is('input') ){
-			$target.attr('checked', 'checked');
-			
-			// unbind all the shites
-			$(this).unbind('click');
-			$('form', $(this) ).submit();
-		}
+	$("#uploadify").uploadify({
+		'uploader'       : '/javascripts/uploadify.swf',
+		'script'         : destination,
+		'cancelImg'      : '/images/cancel.png',
+		'queueID'        : 'fileQueue',
+		'folder'         : 'uploads',
+		'auto'           : true,
+		'multi'          : true
 	});
 	
-	$("a#inline").fancybox({
-		'padding' : 20,
-		'autoDimensions' : false,
-		'height' : 150,
-		'width' : 600,
-		'overlayOpacity' : 0.8,
-		'onStart' : function(){
-			$('#question-wrapper p.instruction').show();
-		},
-		'onClosed' : function(){
-			$('#question-wrapper p.instruction').hide();
+	
+	$("#add-more-step").click(function(){
+		// alert("Boom boom boom, i am clicked");
+		var currentStep = $("div.steps").length;
+		
+		if( currentStep == 0 ){
+			// alert("Yeah, currentStep is 0");
+			$('#step-template').clone().processStepTemplate().insertAfter("#post-header" );
+			// $('#step-template').clone().processStepTemplate().spitId();
+		} else {
+			$('#step-template').clone().processStepTemplate().insertAfter("#step-" + currentStep );
 		}
-	});
-	
-	$("div#center").bind('click', function(e){
-		var $target = $(e.target);
-		if( $target.is('a') && $target.hasClass('toggler') ){
-			var toggle_id = $target.attr('toggle_id');
-			$("#" + toggle_id).fadeIn("fast", function(){
-				$target.parent().fadeOut("fast");
-			});
-			return false;
-		}
-	});
-	
-	$("p#profile-image-wrapper ").hover( 
-		function(){
-			$("#change-image").show()
-		},
-		function(){
-			$("#change-image").hide()
-		}); 
-	
+		
 
-	
+		
+		// 	#(".steps").arrange();
+		// clone #step-template
+		// remove id #step-template
+		// update the steps counter
+		// no ajax yet
+		return false;
+		
+	});
 	
 });
+
+
+
+
+$.fn.extend({
+	processStepTemplate : function(){
+		var currentStep = $("div.steps").length;
+		var nextStep = currentStep + 1 ;
+		$currentNode = $(this);
+		// alert("The $currentNode id is " + $currentNode.attr('id'));
+		$currentNode.attr("id", "step-"+ nextStep );
+		// alert("The $currentNode id is " + $currentNode.attr('id'));
+		$currentNode.addClass("steps");
+		// alert("The $currentNode classes is " + $currentNode.attr('class'));
+		var $currentInput = $("input", $currentNode );
+		$currentInput.attr("id", "step_title-" + nextStep );
+		$currentInput.attr("name", "step[title_" + nextStep +   "]"  );
+		// alert("The id of input is " + $("input", $currentNode).attr("id"));
+		var $currentLabel = $("label", $currentNode );
+		$currentLabel.text("Step " + nextStep );
+		$currentLabel.attr("for", "step_title-" + nextStep);
+		// alert("The text of label is " + $("label", $currentNode ).text() );
+		return this;
+	},
+	spitId : function(){
+		var $currentNode  = $(this);
+		// alert("The id of spit id is " + $currentNode.attr("id"));
+	}
+});
+
+
+//jQuery("div").myMethod();
+
+// $.extend({
+//     myMethod2: function(){...}
+// 
+// });
+
+//jQuery.myMethod()
