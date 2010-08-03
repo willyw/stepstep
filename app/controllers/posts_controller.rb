@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     # there can be .js
     # there can be .html
     @post = Post.create(params[:post])
-    @post.user_id = self.id
+    @post.user_id = current_user.id
     @post.save
     @post.create_steps( params ) 
  
