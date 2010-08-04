@@ -1,3 +1,4 @@
+require 'mime/types'
 class DetailsController < ApplicationController
   def create
     @detail = Detail.new(params[:detail])
@@ -12,8 +13,12 @@ class DetailsController < ApplicationController
       
       f.html{
         
-        
+        redirect_to :back
       }
     end
+  end
+  
+  def update
+    
   end
 end

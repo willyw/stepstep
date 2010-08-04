@@ -1,38 +1,69 @@
 $(document).ready(function(){
-	// find the destination
+
+
+
 	
-	
-	$("#uploadify").uploadify({
-		'uploader'       : '/javascripts/uploadify.swf',
-		'script'         : $("#uploadify").attr('destination'),
-		'cancelImg'      : '/images/cancel.png',
-		'queueID'        : 'fileQueue',
-		'folder'         : 'uploads',
-		'auto'           : true,
-		'multi'          : true,
-		'buttonText'	: "Upload Pictures"
-	
+	$("#add-description").click(function(){
+		$(this).hide();
+		$("#add_step_description").show();
 	});
 	
+	$("#add_step_description").submit(function(){
+		var data_serialized = $(this).serialize();
+		var destination = $(this).attr('action');
+		$.ajax({
+			type: "POST",
+			url: destination,
+			data: data_serialized,
+			datatype : 'script',
+			success: function(response){
+				// alert("Data saved");
+				$("#submit-description").hide();
+			}
+		});
+		
+		return false;
+	});
+	
+	$("#edit-description").click(function(){
+		$("#add_step_description").show();
+		return false;
+	});
 	
 	$("#add-more-step").click(function(){
-		// alert("Boom boom boom, i am clicked");
 		var currentStep = $("div.steps").length;
-		
 		if( currentStep == 0 ){
-			// alert("Yeah, currentStep is 0");
 			$('#step-template').clone().processStepTemplate().insertAfter("#post-header" );
-			// $('#step-template').clone().processStepTemplate().spitId();
 		} else {
 			$('#step-template').clone().processStepTemplate().insertAfter("#step-" + currentStep );
 		}
-		
 		return false;
 	});
 	
 	// new nicEditor({
 	// 	iconsPath : '/javascripts/nicEditorIcons.gif'
 	// }).panelInstance('step_description');
+	
+	$("#edit_step").submit(function(){
+		var data_serialized = $(this).serialize();
+		
+		$.ajax({
+			type: "POST",
+			url: $(this).attr('action'),
+			data: data_serialized,
+			datatype : 'script',
+			success: function(response){
+				alert("Data saved");
+			}
+		});
+		return false;
+	});
+	
+	$("#explanation-toggle").toggle(function(){
+		
+	}, function(){
+		
+	});
 });
 
 
