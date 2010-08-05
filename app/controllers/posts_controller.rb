@@ -29,6 +29,7 @@ class PostsController < ApplicationController
   end
   
   def review
+    @post = Post.find_by_id( params[:post_id])
   end
   
 end

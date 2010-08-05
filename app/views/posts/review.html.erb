@@ -1,0 +1,22 @@
+<div id='center'>
+	
+	<h1 style="text-align:center;">
+		<%= @post.title %>
+	</h1>
+
+	<% for step in @post.steps %>
+		<h2 class="step-title">
+			<span><%= '#' + step.order.to_s %></span>
+			<%= step.title %>
+		</h2>
+		<p class="step-description">
+			<%= step.description %>
+		</p>
+	
+		<div style="width:500px; margin-left:50px; margin-top:10px; margin-bottom:30px; ">
+			<% for detail in step.details %>
+				<%= image_tag detail.photo.url(:small) %>
+			<% end %>
+		</div>
+	<% end %>
+</div>

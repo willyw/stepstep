@@ -42,12 +42,18 @@ textarea { font-family : Helvetica, Arial;}
 	#center div.description-wrapper p.particular { margin-left: 150px; font-size:12px; margin-bottom:5px;}
 	#center a.new-step { right: 0px; display: block; text-align:center; margin-bottom:20px; }
 	#center div.description { clear:left;}
+	#center h2.step-title { font-size:20px; color:rgb(50,50,50); margin-bottom:10px;}
+	#center h2.step-title span { font-size: 10px;}
+	#center p.step-description { margin-left: 30px; color:rgb(150,150,150); line-height:18px;}
+		#step-desc { color:rgb(100,100,100); text-align:left; font-size:14px; line-height:18px;}
+	
 		#detail-selector { list-style:none ; float : right; margin-left:30px;}
 		#detail-selector li {  margin-right:20px;}
 /*		#uploadify { display:none;}*/
 		#edit_step { clear: left;}
 		#edit_step div.step-detail { margin-bottom:10px;}
-		#step_description { border : 1px dashed rgb(230,230,230); padding: 5px; line-height:18px;}
+		#add_step_description { display :none;}
+			#step_description { border : 1px dashed rgb(230,230,230); padding: 5px; line-height:18px;}
 		#steps-available div.clearfix { margin-bottom:20px;}
 		#new_post { margin-bottom:20px;}
 		#new_post input.step_button { border:0; background:0;  background-color: rgb(220,220,220); border:1px solid rgb(50,50,50); margin-top:20px;}

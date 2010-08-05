@@ -8,9 +8,22 @@ $(document).ready(function(){
 		$("#add_step_description").show();
 	});
 	
+	$("#step_description").focus(function(){
+		$("#submit-description").show();
+	});
+	
+	$("#step-desc ").click(function(){
+		$(this).hide();
+		$("#add_step_description").show();
+		$("#step_description").focus();
+	});
+	
+	// $("#step_description")
+	
 	$("#add_step_description").submit(function(){
-		var data_serialized = $(this).serialize();
-		var destination = $(this).attr('action');
+		var $form = $(this);
+		var data_serialized = $form.serialize();
+		var destination = $form.attr('action');
 		$.ajax({
 			type: "POST",
 			url: destination,
@@ -19,6 +32,10 @@ $(document).ready(function(){
 			success: function(response){
 				// alert("Data saved");
 				$("#submit-description").hide();
+				// $("#step_description").css("color", "rgb(150,150,150)");
+				$("#add_step_description").hide();
+				$("#step-desc ").text( description);
+				$("#step-desc ").show();
 			}
 		});
 		

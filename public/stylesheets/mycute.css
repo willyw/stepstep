@@ -4,7 +4,7 @@
 #left ul li a { text-decoration: none;}
 #center {}
 #center a.allset { background-color: #D5E876; border: 1px solid #C0D16B; margin: 0 auto; text-decoration: none; padding: 10px; -moz-border-radius: 10px; -webkit-border-radius:10px; font-weight:bold;}
-#center h1{  background-color:rgb(238,238,216); font-size:25px; padding-right:3px; padding-top:9px; padding-bottom:5px; width:200px; margin:0 auto 20px;}
+#center h1{  background-color:rgb(238,238,216); font-size:25px; padding-right:3px; padding-top:9px; padding-bottom:5px; width:100%; margin:0 auto 20px;}
 
 #center h1.show-all { margin: 0 0 8px;}
 #center ul#uploaded_items { list-style: none; font-size:19px; color: rgb(150,150,150);}

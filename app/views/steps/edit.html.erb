@@ -2,14 +2,17 @@
 <div id='center'>
 	<%= link_to "Back to Overview", posts_url , :class => "new-step"%>
 
-	<h2 style="margin-bottom:20px;">
+	<h2 style="margin-bottom:10px;">
 		<span><%= '#' + @step.order.to_s + "/#{@post.steps.count}" %></span>
 		<%= @step.title %>
 	</h2>
 
 	<%= render :partial => "editor" %>
-	
-	
+	<div id='pic-detail' style="width:620px; ">
+		<% for detail in @step.details %>
+			<%= image_tag detail.photo.url(:small) %>
+		<% end %>
+	</div>
 <br />
 	
 	<%= render_next_step(@step) %>
