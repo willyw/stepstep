@@ -21,6 +21,9 @@
 	<% end %>
 </div>
 
-<div id="right">
-	<h2 style="text-align:center; background-color: #FAFAF8;">Author</h2>
+<div id="right" style="text-align:center;">
+		<%= image_tag @owner.photo.url(:display) %>
+		<span style="margin-top:10px; display:block;"><%= @owner.name %></span>
+	
+	
 </div>

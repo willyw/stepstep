@@ -34,6 +34,7 @@ class PostsController < ApplicationController
   
   def show_public
     @post = Post.find_by_permalink( params[:permalink])
+    @owner = @post.user
   end
   
 end

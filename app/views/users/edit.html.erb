@@ -1,7 +1,7 @@
-<h1>Edit Account</h1>
+
 
 <% if @user.photo %>
-	<p style="text-align:center;">
+	<p style="text-align:center; margin-top:10px;">
 		<%= image_tag @user.photo.url(:profile) %>
 	</p>
 <% else %>
