@@ -24,14 +24,14 @@ $(document).ready(function(){
 		var $form = $(this);
 		var data_serialized = $form.serialize();
 		var destination = $form.attr('action');
+		$("#ajax-uploader").show();
 		$.ajax({
 			type: "POST",
 			url: destination,
 			data: data_serialized,
 			datatype : 'script',
 			success: function(response){
-				// alert("Data saved");
-				$("#submit-description").hide();
+				
 				// $("#step_description").css("color", "rgb(150,150,150)");
 				$("#add_step_description").hide();
 				$("#step-desc ").text( description);

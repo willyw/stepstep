@@ -47,7 +47,7 @@ textarea { font-family : Helvetica, Arial;}
 	#center h2.step-title { font-size:20px; color:rgb(50,50,50); margin-bottom:10px;}
 	#center h2.step-title span { font-size: 10px;}
 	#center p.step-description { margin-left: 30px; color:rgb(150,150,150); line-height:18px;}
-		#step-desc { color:rgb(100,100,100); text-align:left; font-size:14px; line-height:18px;}
+		#step-desc { color:rgb(100,100,100); text-align:left; font-size:14px; line-height:18px; cursor:pointer;}
 	
 		#detail-selector { list-style:none ; float : right; margin-left:30px;}
 		#detail-selector li {  margin-right:20px;}

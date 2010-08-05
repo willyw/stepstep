@@ -11,8 +11,10 @@
 			<%= f.text_area :description, :size=>"60x5" %>
 			<input type="hidden" id="step_owner" name="step_id" value="<%= @step.id %>" />
 		
+			<img style="display:none;"  src="/images/ajax-loader.gif" id="ajax-uploader" />
 			<%= submit_tag "submit", :style=>"display:block; width:100px; margin:10px 0 0 20px; display:none;" , :id=>"submit-description"%>
 		<% end %>
+	
 	
 	
 	
