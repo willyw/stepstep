@@ -31,7 +31,7 @@ $(document).ready(function(){
 			data: data_serialized,
 			datatype : 'script',
 			success: function(response){
-				
+				$("#ajax-uploader").hide();
 				// $("#step_description").css("color", "rgb(150,150,150)");
 				$("#add_step_description").hide();
 				$("#step-desc ").text( description);
