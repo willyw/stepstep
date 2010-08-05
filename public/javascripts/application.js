@@ -1,6 +1,10 @@
 $(document).ready(function(){
 
 
+	$("#new_detail").submit(function(){
+		$(this).hide();
+		$("#ajax-uploader-pic").show();
+	});
 
 	
 	$("#add-description").click(function(){
