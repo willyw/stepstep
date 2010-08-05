@@ -34,7 +34,7 @@ $(document).ready(function(){
 				$("#ajax-uploader").hide();
 				alert(response);
 				$("#add_step_description").hide();
-				$("#step-desc ").text( description);
+				$("#step-desc ").text( response );
 				$("#step-desc ").show();
 			}
 		});
