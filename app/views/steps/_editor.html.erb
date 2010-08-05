@@ -11,8 +11,9 @@
 			<%= f.text_area :description, :size=>"60x5" %>
 			<input type="hidden" id="step_owner" name="step_id" value="<%= @step.id %>" />
 		
-			<img style="display:none;"  src="/images/ajax-loader.gif" id="ajax-uploader" />
-			<%= submit_tag "submit", :style=>"display:block; width:100px; margin:10px 0 0 20px; display:none;" , :id=>"submit-description"%>
+
+			<%= submit_tag "submit", :style=>"display:block; width:100px; margin:10px 0 0 20px; display:none;float:left;" , :id=>"submit-description"%>
+			<img style="display:none; float:left;"  src="/images/ajax-loader.gif" id="ajax-uploader" />
 		<% end %>
 	
 	
@@ -27,7 +28,7 @@
 			<%= f.file_field :photo, :id =>"uploadify" %>
 			<input type="hidden" id="step_owner" name="step_id" value="<%= @step.id %>" />
 			<!-- <img src="/images/upload_pic.png" style="cursor:pointer; margin-top:50px; margin-bottom:10px;" id="uploadify-trigger" /> -->
-			<%= submit_tag "submit", :style=>"display:block; width:100px; margin:0 auto;"%>
+			<%= submit_tag "submit", :style=>"display:block; width:100px; margin:0 auto; "%>
 		<% end %>
 			<img style="display:none;"  src="/images/ajax-loader.gif" id="ajax-uploader-pic" />
 		</div>

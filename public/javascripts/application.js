@@ -54,9 +54,9 @@ $(document).ready(function(){
 	$("#add-more-step").click(function(){
 		var currentStep = $("div.steps").length;
 		if( currentStep == 0 ){
-			$('#step-template').clone().processStepTemplate().insertAfter("#post-header" );
+			$('#step-template').clone().processStepTemplate().insertAfter("#post-header" ).children("input").focus();
 		} else {
-			$('#step-template').clone().processStepTemplate().insertAfter("#step-" + currentStep );
+			$('#step-template').clone().processStepTemplate().insertAfter("#step-" + currentStep ).children("input").focus();
 		}
 		return false;
 	});
