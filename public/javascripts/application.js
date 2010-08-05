@@ -36,9 +36,9 @@ $(document).ready(function(){
 			datatype : 'script',
 			success: function(response){
 				$("#ajax-uploader").hide();
-				alert(response);
+				// alert(response);
 				$("#add_step_description").hide();
-				// $("#step-desc ").text( response );
+				$("#step-desc ").text( response );
 				$("#step-desc ").show();
 			}
 		});
