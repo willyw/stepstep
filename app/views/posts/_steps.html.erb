@@ -1,73 +1,39 @@
 <ul id="steps-available">
-	<div class='clearfix'>
-		<img src='/images/left_first.png' style="float:left;" class="clearfix">
-		<div class='description-wrapper'>
-			<a class="steps-title">How to cook your cat</a>
-			<p class='particular'>
-				<span class="date">17 August 2009</span> | 
-				<cite>Willy Yunnal</cite>
-			</p>
-			<p class='steps-summary'>
-				I know that you know that cat can be extremely 
-				irritating. Luckily, I found a way to cut it cleanly, without
-				much fuss and troubles! 
+	<% for post in @posts %>
+		<div class='clearfix' style="margin-bottom:25px;">
+			<% detail = post.steps.last.details.last%>
+			<%= image_tag detail.photo.url(:small) , :style=>"float :left;"%>
+			<div class='description-wrapper'>
+				<a class="steps-title"><%= post.title %></a>
+				<p class='particular'>
+					<span class="date"><%= post.created_at.to_date%></span> | 
+					<cite>Willy Yunnal</cite>
+				</p>
+				<p class='steps-summary'>
+					I know that you know that cat can be extremely 
+					irritating. Luckily, I found a way to cut it cleanly, without
+					much fuss and troubles! 
 		
-				I know that you know that cat can be extremely 
-				irritating. Luckily, I found a way to cut it cleanly, without
-				much fuss and troubles!
+					I know that you know that cat can be extremely 
+					irritating. Luckily, I found a way to cut it cleanly, without
+					much fuss and troubles!
 		
-				I know that you know that cat can be extremely 
-				irritating. Luckily, I found a way to cut it cleanly, without
-				much fuss and troubles!
+					I know that you know that cat can be extremely 
+					irritating. Luckily, I found a way to cut it cleanly, without
+					much fuss and troubles!
 		
-				I know that you know that cat can be extremely 
-				irritating. Luckily, I found a way to cut it cleanly, without
-				much fuss and troubles!
+					I know that you know that cat can be extremely 
+					irritating. Luckily, I found a way to cut it cleanly, without
+					much fuss and troubles!
 		
-				I know that you know that cat can be extremely 
-				irritating. Luckily, I found a way to cut it cleanly, without
-				much fuss and troubles!
-			</p>
+					I know that you know that cat can be extremely 
+					irritating. Luckily, I found a way to cut it cleanly, without
+					much fuss and troubles!
+				</p>
 			
-		</div> <!-- EO div.description-wrapper-->
+			</div> <!-- EO div.description-wrapper-->
 
 		
-	</div> <!-- EO starting steps entry -->
-	
-	<div class='clearfix'>
-		<img src='/images/left_first.png' style="float:left;" class="clearfix">
-		<div class='description-wrapper'>
-			<a class="steps-title">How to cook your cat</a>
-			<p class='particular'>
-				<span class="date">17 August 2009</span> | 
-				<cite>Willy Yunnal</cite>
-			</p>
-			<p class='steps-summary'>
-				I know that you know that cat can be extremely 
-				irritating. Luckily, I found a way to cut it cleanly, without
-				much fuss and troubles! 
-		
-				I know that you know that cat can be extremely 
-				irritating. Luckily, I found a way to cut it cleanly, without
-				much fuss and troubles!
-		
-				I know that you know that cat can be extremely 
-				irritating. Luckily, I found a way to cut it cleanly, without
-				much fuss and troubles!
-		
-				I know that you know that cat can be extremely 
-				irritating. Luckily, I found a way to cut it cleanly, without
-				much fuss and troubles!
-		
-				I know that you know that cat can be extremely 
-				irritating. Luckily, I found a way to cut it cleanly, without
-				much fuss and troubles!
-			</p>
-
-		</div> <!-- EO div.description-wrapper-->
-
-		
-	</div> <!-- EO starting steps entry -->
-	
-	
+		</div> <!-- EO starting steps entry -->
+	<% end %>
 </ul><!-- EO ul#steps-available -->
