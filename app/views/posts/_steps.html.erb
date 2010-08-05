@@ -2,9 +2,14 @@
 	<% for post in @posts %>
 		<div class='clearfix' style="margin-bottom:25px;">
 			<% detail = post.steps.last.details.last%>
-			<%= image_tag detail.photo.url(:small) , :style=>"float :left;"%>
+			<% if !detail.nil? %>
+				<%= image_tag detail.photo.url(:small) , :style=>"float :left;"%>
+			<% else %>
+				<img src='/images/willy_face_small.png' style="float:left;" />
+			<% end %>
+			
 			<div class='description-wrapper'>
-				<a class="steps-title"><%= post.title %></a>
+				<%= link_to "#{post.title}", tutorial_url(post.permalink)  , :class=>"steps-title"%>
 				<p class='particular'>
 					<span class="date"><%= post.created_at.to_date%></span> | 
 					<cite>Willy Yunnal</cite>

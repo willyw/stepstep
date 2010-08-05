@@ -32,4 +32,8 @@ class PostsController < ApplicationController
     @post = Post.find_by_id( params[:post_id])
   end
   
+  def show_public
+    @post = Post.find_by_permalink( params[:permalink])
+  end
+  
 end

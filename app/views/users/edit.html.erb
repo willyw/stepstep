@@ -1,9 +1,24 @@
-<h1>Edit My Account</h1>
+<h1>Edit Account</h1>
 
-<% form_for @user, :url => account_path do |f| %>
-  <%= f.error_messages %>
-  <%= render :partial => "form", :object => f %>
-  <%= f.submit "Update" %>
+<% if @user.photo %>
+	<p style="text-align:center;">
+		<%= image_tag @user.photo.url(:profile) %>
+	</p>
+<% else %>
+Upload your pic
+<% end %>
+<% form_for @user, :html=>{:multipart => true} do |f| %>
+	<%= f.file_field :photo %>
+	<%= submit_tag "Add Photo"%>
 <% end %>
 
-<br /><%= link_to "My Profile", account_path %>
+
+<% form_for @user, :html=>{:multipart => true} do |f| %>
+	<ul>
+		<li>
+			<%= f.label :name%>
+			<%= f.text_field :name %>
+		</li>
+	</ul>
+	<%= submit_tag "Change Details"%>
+<% end %>

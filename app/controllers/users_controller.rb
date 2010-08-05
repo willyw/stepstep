@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     @user = @current_user # makes our views "cleaner" and more consistent
     if @user.update_attributes(params[:user])
       flash[:notice] = "Account updated!"
-      redirect_to :action => "show", :success => true, :after_change => true
+      redirect_to :back
     else
       # puts "This is the error\n"*10
       # @user.errors.each_error{ |boom, err| puts "#{boom} - #{err.class} - #{err.type} - #{err.message} " } 

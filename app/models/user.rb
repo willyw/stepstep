@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   has_attached_file :photo, 
       :styles =>  { 
         :profile => "200x200>",
-        :display => "140x140>",
+        :display => "100x100>",
         :to_crop => "500x500>"
       },
       :url  => "/assets/users/:id/:style/:basename.:extension",

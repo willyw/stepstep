@@ -26,6 +26,14 @@ module ApplicationHelper
     content_tag("p",err || "", options )     
   end
 
+  def  in_the_steps?(params)
+    (params[:controller] == "steps") or 
+    (params[:controller]=="posts")
+  end
+  
+  def in_the_profile?(params)
+      (params[:controller] == 'users' and params[:action]=="edit" )
+  end
 
   private
     def condition_1_qtiest?(params)

@@ -1,8 +1,12 @@
 class Post < ActiveRecord::Base
   belongs_to :user
   has_many :steps
+  has_permalink :title
 
-
+  def to_param
+    permalink
+  end
+          
 =begin
 The content of params
 {"commit"=>"Done", 
